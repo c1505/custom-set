@@ -40,84 +40,84 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_empty_set_is_a_subset_of_another_empty_set
-    
+
     set1 = CustomSet.new []
     set2 = CustomSet.new []
     assert set1.subset? set2
   end
 
   def test_empty_set_is_a_subset_of_non_empty_set
-    skip
+
     set1 = CustomSet.new []
     set2 = CustomSet.new [1]
     assert set1.subset? set2
   end
 
   def test_non_empty_set_is_not_a_subset_of_empty_set
-    skip
+
     set1 = CustomSet.new [1]
     set2 = CustomSet.new []
     refute set1.subset? set2
   end
 
   def test_set_is_a_subset_of_set_with_exact_same_elements
-    skip
+
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [1, 2, 3]
     assert set1.subset? set2
   end
 
   def test_set_is_a_subset_of_larger_set_with_same_elements
-    skip
+
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 1, 2, 3]
     assert set1.subset? set2
   end
 
   def test_set_is_not_a_subset_of_set_that_does_not_contain_its_elements
-    skip
+
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 1, 3]
     refute set1.subset? set2
   end
 
   def test_the_empty_set_is_disjoint_with_itself
-    skip
+
     set1 = CustomSet.new []
     set2 = CustomSet.new []
     assert set1.disjoint? set2
   end
 
   def test_empty_set_is_disjoint_with_non_empty_set
-    skip
+
     set1 = CustomSet.new []
     set2 = CustomSet.new [1]
     assert set1.disjoint? set2
   end
 
   def test_non_empty_set_is_disjoint_with_empty_set
-    skip
+
     set1 = CustomSet.new [1]
     set2 = CustomSet.new []
     assert set1.disjoint? set2
   end
 
   def test_sets_are_not_disjoint_if_they_share_an_element
-    skip
+
     set1 = CustomSet.new [1, 2]
     set2 = CustomSet.new [2, 3]
     refute set1.disjoint? set2
   end
 
   def test_sets_are_disjoint_if_they_share_no_elements
-    skip
+
     set1 = CustomSet.new [1, 2]
     set2 = CustomSet.new [3, 4]
     assert set1.disjoint? set2
   end
 
   def test_empty_sets_are_equal
-    skip
+    
     set1 = CustomSet.new []
     set2 = CustomSet.new []
     assert_equal set1, set2
