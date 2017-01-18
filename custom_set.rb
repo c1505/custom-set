@@ -1,31 +1,29 @@
 require 'pry'
 class CustomSet
-
-  # should i include enumerable and define an each?
-  attr_accessor :set
-  def initialize(set)
-    @set = set
+  attr_accessor :data
+  def initialize(data)
+    @data = data
   end
 
   def empty?
-    set.empty?
+    data.empty?
   end
 
   def member?(element)
-    set.include?(element)
+    data.include?(element)
   end
 
   def subset?(set2)
-    return true if set.empty?
-    return false if set2.set.empty?
-    set.all? do |element|
-      set2.set.include?(element)
+    return true if data.empty?
+    return false if set2.data.empty?
+    data.all? do |element|
+      set2.data.include?(element)
     end
   end
 
   def disjoint?(set2)
-    !set.any? do |element| # this is ugly
-      set2.set.include?(element)
+    !data.any? do |element| # this is ugly
+      set2.data.include?(element)
     end
   end
 
@@ -34,24 +32,24 @@ class CustomSet
   end
 
   def add(element)
-    set.push(element)
+    data.push(element)
     self
   end
 
   def intersection(set2)
-    inter = set.map do |element|
-      set2.set.select {|element2| element == element2}
+    inter = data.map do |element|
+      set2.data.select {|element2| element == element2}
     end.flatten
     CustomSet.new(inter)
   end
 
   def difference(set2)
-    diff = set - set2.set
+    diff = data - set2.data
     CustomSet.new(diff)
   end
 
   def union(set2)
-    add = set + set2.set
+    add = data + set2.data
     CustomSet.new(add.uniq)
   end
 
