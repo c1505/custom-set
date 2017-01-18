@@ -1,6 +1,5 @@
-require 'pry'
 class CustomSet
-  attr_accessor :data
+  attr_reader :data
   def initialize(data)
     @data = data
   end
@@ -22,7 +21,7 @@ class CustomSet
   end
 
   def disjoint?(set2)
-    !data.any? do |element| # this is ugly
+    !data.any? do |element|
       set2.data.include?(element)
     end
   end
