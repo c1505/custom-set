@@ -28,4 +28,32 @@ class CustomSet
     end
   end
 
+  def ==(set2)
+    subset?(set2) && set2.subset?(self)
+  end
+
+  def add(element)
+    set.push(element)
+    self
+  end
+
+  def intersection(set2)
+    inter = set.map do |element|
+      set2.set.select {|element2| element == element2}
+    end.flatten
+    CustomSet.new(inter)
+  end
+
+  def difference(set2)
+    diff = set - set2.set
+    CustomSet.new(diff)
+  end
+
+  def union(set2)
+    add = set + set2.set
+
+    CustomSet.new(add.uniq)
+  end
+
+
 end
