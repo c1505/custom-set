@@ -1,5 +1,6 @@
 require 'pry'
 class CustomSet
+
   # should i include enumerable and define an each?
   attr_accessor :set
   def initialize(set)
@@ -51,9 +52,10 @@ class CustomSet
 
   def union(set2)
     add = set + set2.set
-
     CustomSet.new(add.uniq)
   end
 
-
+end
+module BookKeeping
+  VERSION = 1
 end

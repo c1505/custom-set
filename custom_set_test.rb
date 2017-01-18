@@ -197,7 +197,7 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_intersection_of_two_sets_with_no_shared_elements_is_an_empty_set
-    skip
+    
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 5, 6]
     expected = CustomSet.new []
@@ -253,7 +253,7 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_union_of_an_empty_set_and_non_empty_set_is_the_non_empty_set
-    
+
     set1 = CustomSet.new []
     set2 = CustomSet.new [2]
     expected = CustomSet.new [2]
@@ -261,7 +261,7 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_union_of_a_non_empty_set_and_empty_set_is_the_non_empty_set
-    skip
+
     set1 = CustomSet.new [1, 3]
     set2 = CustomSet.new []
     expected = CustomSet.new [1, 3]
@@ -269,7 +269,7 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_union_of_non_empty_sets_contains_all_unique_elements
-    skip
+
     set1 = CustomSet.new [1, 3]
     set2 = CustomSet.new [2, 3]
     expected = CustomSet.new [3, 2, 1]
@@ -294,7 +294,7 @@ class CustomSetTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
+
     assert_equal 1, BookKeeping::VERSION
   end
 end
